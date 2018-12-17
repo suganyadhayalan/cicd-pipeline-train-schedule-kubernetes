@@ -46,6 +46,11 @@ pipeline {
                 input 'Deploy to Production?'
                 milestone(1)
                 //implement Kubernetes deployment here
+                kubernetedDeploy{
+                kubeconfigid: 'kubeconfig',
+                configs: 'train-schedule-kube.yml'
+                enagleConfigSubdivision: true    
+                }
             }
         }
     }
